@@ -1,0 +1,5 @@
+sphinx-book-theme
+sphinxcontrib-bibtex
+sphinx-proof
+sphinx-togglebutton
+esbonio

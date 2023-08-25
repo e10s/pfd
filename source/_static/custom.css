@@ -1,0 +1,31 @@
+:root {
+  --admonition-thm-icon: "\f11e"; /* flag-checkered */
+  --admonition-def-icon: "\f015"; /* house */
+  --admonition-prop-icon: "\f0a6"; /* hand-point-up */
+  --admonition-ex-icon: "\f275"; /* industry */
+}
+
+div.theorem > .admonition-title:after {
+  content: var(--admonition-thm-icon);
+  color: var(--note-border-color);
+}
+
+div.corollary > .admonition-title:after {
+  content: var(--admonition-thm-icon);
+  color: var(--caution-border-color);
+}
+
+div.definition > .admonition-title:after {
+  content: var(--admonition-def-icon);
+  color: var(--note-border-color);
+}
+
+div.property > .admonition-title:after {
+  content: var(--admonition-prop-icon);
+  color: var(--caution-border-color);
+}
+
+div.example > .admonition-title:after {
+  content: var(--admonition-ex-icon);
+  color: var(--hint-border-color);
+}
