@@ -8,6 +8,7 @@ extensions = [
     "sphinxcontrib.bibtex",
     "sphinx_proof",
     "sphinx_togglebutton",
+    "sphinx_last_updated_by_git",
 ]
 templates_path = ["_templates"]
 exclude_patterns = []

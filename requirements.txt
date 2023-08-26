@@ -2,4 +2,5 @@ sphinx-book-theme
 sphinxcontrib-bibtex
 sphinx-proof
 sphinx-togglebutton
+sphinx-last-updated-by-git
 esbonio
