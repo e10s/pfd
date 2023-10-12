@@ -201,4 +201,40 @@ Gessel の技巧的な証明を概ねなぞることにする。
 
     となり、示された。
 
+蛇足ながら、これにも幾何的な性質を見いだせる。
+
+.. prf:theorem:: 正多角形の対角線の長さの逆数の偶数冪和
+    :label: regular_polygon_recip_sq_sum
+
+    半径 :math:`1` の円に内接する正 :math:`K` 角形について、ある頂点とそれ以外の頂点を結んだ :math:`K-1` 本の線分の長さの :math:`2M` 乗の逆数和は、
+
+    .. math::
+        \sum_{m=0}^M \frac{(-1)^m}{(M+m-1)!} \binom{M}{m} \sum_{r=1}^{M+m} \stirI{M+m}{r} \frac{B^-_r}{r} (1-K^r)
+
+    である。ただし、:math:`M` は正の整数である。
+
+.. prf:proof::
+    複素数平面上の :math:`z^K-1` の根を頂点とする正 :math:`K` 角形について、点 :math:`1` を共通の端点とする線分たちを考えても一般性を失わない。
+
+    このとき、それらの線分の長さの :math:`2M` 乗の逆数和は、
+
+    .. math::
+        \begin{align}
+        \sum_{k=1}^{K-1} \frac{1}{\abs{1-\zeta_K^k}^{2M}}
+        &= \sum_{k=1}^{K-1} \qty[ \frac{1}{(1-\zeta_K^k)(1-\zeta_K^{-k})} ]^M \\
+        &= \sum_{k=1}^{K-1} \qty[ \frac{-\zeta_K^k}{(1-\zeta_K^k)^2} ]^M \\
+        &= \sum_{k=1}^{K-1} \qty[ \frac{1}{1-\zeta_K^k} - \frac{1}{(1-\zeta_K^k)^2} ]^M \\
+        &= \sum_{k=1}^{K-1} \frac{1}{(1-\zeta_K^k)^M} \qty(1 - \frac{1}{1-\zeta_K^k} )^M \\
+        &= \sum_{k=1}^{K-1} \frac{1}{(1-\zeta_K^k)^M} \sum_{m=0}^M (-1)^m \binom{M}{m} \frac{1}{(1-\zeta_K^k)^m} \\
+        &= \sum_{k=1}^{K-1} \sum_{m=0}^M (-1)^m \binom{M}{m} \frac{1}{(1-\zeta_K^k)^{M+m}} \\
+        &= \sum_{m=0}^M (-1)^m \binom{M}{m} \sum_{k=1}^{K-1} \frac{1}{(1-\zeta_K^k)^{M+m}}
+        \end{align}
+
+    と表せるから、:prf:ref:`gessel` より、
+
+    .. math::
+        \sum_{k=1}^{K-1} \frac{1}{\abs{1-\zeta_K^k}^{2M}} = \sum_{m=0}^M \frac{(-1)^m}{(M+m-1)!} \binom{M}{m} \sum_{r=1}^{M+m} \stirI{M+m}{r} \frac{B^-_r}{r} (1-K^r)
+
+    となり、示された。
+
 .. footbibliography::
