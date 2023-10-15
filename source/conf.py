@@ -9,6 +9,7 @@ extensions = [
     "sphinx_proof",
     "sphinx_togglebutton",
     "sphinx_last_updated_by_git",
+    "sphinx_sitemap",
 ]
 templates_path = ["_templates"]
 exclude_patterns = []
@@ -28,6 +29,8 @@ html_css_files = [
     "custom.css",
 ]
 html_title = project
+html_baseurl = "https://e10s.github.io/pfd/"
+html_extra_path = ["googlefb2b68adba636a34.html"]
 html_last_updated_fmt = ""
 
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
@@ -48,3 +51,5 @@ mathjax3_config = {
 
 bibtex_bibfiles = ["article_refs.bib", "book_refs.bib", "web_refs.bib"]
 bibtex_footbibliography_header = ".. rubric:: 参考文献"
+
+sitemap_url_scheme = "{link}"
