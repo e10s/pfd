@@ -1,3 +1,4 @@
 .vscode/
-_docs/
+build/
+.venv/
 venv/
