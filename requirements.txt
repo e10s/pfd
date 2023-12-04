@@ -6,4 +6,5 @@ sphinx-proof
 sphinx-togglebutton
 sphinx-last-updated-by-git
 sphinx-sitemap
+sphinx-favicon
 sphinxext-opengraph
