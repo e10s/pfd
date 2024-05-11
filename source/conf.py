@@ -10,7 +10,6 @@ extensions = [
     "sphinx_togglebutton",
     "sphinx_last_updated_by_git",
     "sphinx_sitemap",
-    "sphinx_favicon",
     "sphinxext.opengraph",
 ]
 templates_path = ["_templates"]
@@ -54,9 +53,5 @@ bibtex_bibfiles = ["article_refs.bib", "book_refs.bib", "web_refs.bib"]
 bibtex_footbibliography_header = ".. rubric:: 参考文献"
 
 sitemap_url_scheme = "{link}"
-
-favicons = [
-    "icon.svg",
-]
 
 ogp_site_url = html_baseurl
