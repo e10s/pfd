@@ -13,7 +13,7 @@ extensions = [
     "sphinxext.opengraph",
 ]
 templates_path = ["_templates"]
-exclude_patterns = []
+# exclude_patterns = []
 numfig = True
 numfig_secnum_depth = 3
 
