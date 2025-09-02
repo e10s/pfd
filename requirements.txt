@@ -5,4 +5,4 @@ sphinx-proof==0.2.1
 sphinx-togglebutton==0.3.2
 sphinx-last-updated-by-git==0.3.8
 sphinx-sitemap==2.8.0
-sphinxext-opengraph==0.10.0
+sphinxext-opengraph==0.13.0
