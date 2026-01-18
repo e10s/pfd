@@ -70,11 +70,9 @@
     .. math::
         :label: melzak_pow_temp_2
 
-        \begin{align}
         a_h^{\langle m \rangle}
         &= \frac{1}{(N-m)!} \eval{ \dv[N-m]{z} P(z+w) (f(z))^N }_{z=-h} \\
         &= \frac{1}{(N-m)!} \sum_{\nu=0}^{N-m} \binom{N-m}{\nu} {P^{(N-m-\nu)} (w-h)} \eval{ [(f(z))^N]^{(\nu)} }_{z=-h}
-        \end{align}
 
     と書き直すことができる。
 
@@ -86,11 +84,9 @@
     と定義すると、
 
     .. math::
-        \begin{align}
         e^{g(z)}
         &= e^{N \log f(z)} \\
         &= (f(z))^N
-        \end{align}
 
     であり、:prf:ref:`Faà di Bruno の公式の系 <faa_di_bruno_cor>` より、
 
@@ -111,12 +107,10 @@
     さらに、調和数列の積の部分分数分解の場合 :eq:`hp_prod_pfd_coef` と同様に、
 
     .. math::
-        \begin{align}
         f(-h)
         &= \eval{ (z+h) \prod_{k=0}^K \frac{1}{z+k} }_{z=-h} \\
         &= \frac{1}{K!} (-1)^h \binom{K}{h} \\
         &= C_{K,k}
-        \end{align}
 
     であるから、:eq:`melzak_pow_temp_3` は、
 
@@ -132,17 +126,14 @@
     また、:math:`\nu>0` について、:math:`\log f(z)` の :math:`\nu` 階導関数は、
 
     .. math::
-        \begin{align}
         \dv[\nu]{z} \log f(z)
         &= \dv[\nu]{z} \log \prod_{k=0,k \neq h}^K \frac{1}{z+k} \\
         &= \dv[\nu]{z} \sum_{k=0,k \neq h}^K \log \frac{1}{z+k} \\
         &= (-1)^\nu (\nu-1)! \sum_{k=0,k \neq h}^K \frac{1}{(z+k)^\nu}
-        \end{align}
 
     となるから、:math:`\log f(z)` の :math:`z=-h` における :math:`\nu` 階微分係数は、
 
     .. math::
-        \begin{align}
         \dv[\nu]{\log f}{z} (-h)
         &= (-1)^\nu (\nu-1)! \sum_{k=0,k \neq h}^K \frac{1}{(k-h)^\nu} \\
         &= (-1)^\nu (\nu-1)! \qty[ \sum_{k=0}^{h-1} \frac{1}{(k-h)^\nu} + \sum_{k=h+1}^K \frac{1}{(k-h)^\nu} ] \\
@@ -151,7 +142,6 @@
         &= (\nu-1)! \qty[ \sum_{k=1}^h \frac{1}{k^\nu} + (-1)^\nu\sum_{k=1}^{K-h} \frac{1}{k^\nu} ] \\
         &= (\nu-1)! \qty[ H_h^{(\nu)} + (-1)^\nu H_{K-k}^{(\nu)} ] \\
         &= (\nu-1)! \bar{H}_{K,h}^{(\nu)}
-        \end{align}
 
     となり、
 
@@ -216,11 +206,9 @@
     となるから、
 
     .. math::
-        \begin{align}
         P(z+w) \prod_{k=0}^K \frac{1}{z+k}
         &= \sum_{k=0}^K \frac{C_{K,k} P(w-k)}{z+k} \\
         &= \frac{1}{K!} \sum_{k=0}^K (-1)^k \binom{K}{k} \frac{P(w-k)}{z+k}
-        \end{align}
 
     となり、:prf:ref:`Melzak の公式 <melzak>` となる。
 
@@ -235,6 +223,8 @@
     であり、:math:`B_0 = 1` であったから、
 
     .. math::
+        :no-wrap:
+
         \begin{empheq}[left=\empheqlbrace]{align}
         a_k^{\langle 2 \rangle} &= C_{K,k}^2 \\
         a_k^{\langle 1 \rangle} &= C_{K,k}^2 \cdot 2 (H_k - H_{K-k})

@@ -53,6 +53,8 @@ Bell 多項式
     と定義する。ただし、
 
     .. math::
+        :no-wrap:
+
         \begin{empheq}[left=\empheqlbrace]{align}
             &\sum_{i=1}^{n-k+1} j_i = k \\
             &\sum_{i=1}^{n-k+1} i j_i = n
@@ -111,11 +113,9 @@ Faà di Bruno の公式
     とくに :math:`f(z) \triangleq e^z` のとき、:math:`f(g(z)) = e^{g(z)}` の :math:`n` 階導関数は :prf:ref:`完全 Bell 多項式 <complete_bell_polynomial>` を用いて、
 
     .. math::
-        \begin{align}
         \dv[n]{z} e^{g(z)}
         &= \sum_{k=0}^n e^{g(z)} B_{n,k}( g'(z),g''(z),\dots,g^{(n-k+1)}(z) ) \\
         &= e^{g(z)} B_n( g'(z),g''(z),\dots,g^{(n)}(z) )
-        \end{align}
 
     と表せる。
 

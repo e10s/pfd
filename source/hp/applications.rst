@@ -10,11 +10,9 @@
     複素数 :math:`z` と非負整数 :math:`K` について、一般二項係数 :math:`\binom{z}{K}` を、
 
     .. math::
-        \begin{align}
         \binom{z}{K}
         &\triangleq \frac{z (z-1) \cdots (z-K+1)}{K!} \\
         &= \frac{1}{K!} \prod_{k=0}^{K-1} (z-k)
-        \end{align}
 
     と定義する。
 
@@ -27,14 +25,12 @@
     :prf:ref:`melzak_gen_hp` より、
 
     .. math::
-        \begin{align}
         \frac{1}{\binom{z}{K}}
         &= K! \prod_{k=0}^{K-1} \frac{1}{z-k} \\
         &= K! \cdot \frac{1}{(K-1)! (-1)^{K-1}} \sum_{k=0}^{K-1} (-1)^k \binom{K-1}{k} \frac{1}{z-k} \\
         &= K! \cdot \frac{1}{(K-1)! (-1)^{K-1}} \sum_{k=0}^{K-1} (-1)^k \frac{(K-1)!}{k! ((K-1)-k)!} \cdot \frac{1}{z-k} \\
         &= \sum_{k=0}^{K-1} (-1)^{K+k-1} \frac{K!}{k! (K-k)!} \cdot \frac{K-k}{z-k} \\
         &= \sum_{k=0}^{K-1} (-1)^{K-1-k} \binom{K}{k} \frac{K-k}{z-k}
-        \end{align}
 
     となる。
 
@@ -44,13 +40,11 @@
     :prf:ref:`binom_inv_pfd_1` において :math:`z` を改めて :math:`z+K` とおくと、
 
     .. math::
-        \begin{align}
         \frac{1}{\binom{z+K}{K}}
         &= \sum_{k=0}^{K-1} (-1)^{K-1-k} \binom{K}{k} \frac{K-k}{z+K-k} \\
         &= \sum_{k=-K}^{-1} (-1)^{-k-1} \binom{K}{K+k} \frac{-k}{z-k} \\
         &= \sum_{k=1}^K (-1)^{k-1} \binom{K}{K-k} \frac{k}{z+k} \\
         &= \sum_{k=1}^K (-1)^{k-1} \binom{K}{k} \frac{k}{z+k} \\
-        \end{align}
 
     となる。
 
@@ -77,7 +71,6 @@
     と定義すると、
 
     .. math::
-        \begin{align}
         P(-2k)
         &= \prod_{i=0}^{K-1} (-2k+2i+1) \\
         &= \prod_{i=-k+1}^{K-k} (2i-1) \\
@@ -87,27 +80,22 @@
         &= (-1)^k (2k-1)!! (2(K-k)-1)!! \\
         &= (-1)^k \frac{(2k)!}{2^k k!} \cdot \frac{(2(K-k))!}{2^{K-k} (K-k)!} \\
         &= (-1)^k \frac{(2k)!(2(K-k))!}{2^K k!(K-k)!}
-        \end{align}
 
     となり、
 
     .. math::
-        \begin{align}
         \frac{1}{K! 2^K} (-1)^k \binom{K}{k} P(-2k)
         &= \frac{1}{K! 2^K} (-1)^k \binom{K}{k} \cdot (-1)^k \frac{(2k)!(2(K-k))!}{2^K k!(K-k)!} \\
         &= \frac{1}{K!} \cdot \frac{K!}{k!(K-k)!} \cdot \frac{(2k)!(2(K-k))!}{2^K k!(K-k)!} \\
         &= \frac{1}{4^K} \cdot \frac{(2k)!}{(k!)^2} \cdot \frac{(2(K-k))!}{((K-k)!)^2} \\
         &= \frac{1}{4^K} \binom{2k}{k} \binom{2(K-k)}{K-k}
-        \end{align}
 
     であるから、:prf:ref:`melzak_gen_hp` より、
 
     .. math::
-        \begin{align}
         P(z) \prod_{k=0}^K \frac{1}{z+2k}
         &= \frac{1}{K!2^K} \sum_{k=0}^K (-1)^k \binom{K}{k} \frac{P(-2k)}{z+2k} \\
         &= \sum_{k=0}^K \frac{1}{4^K} \binom{2k}{k} \binom{2(K-k)}{K-k} \frac{1}{z+2k}
-        \end{align}
 
     となり、すなわち、
 

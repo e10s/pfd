@@ -20,29 +20,23 @@
     :math:`z^K-1` を複素数の範囲で因数分解すると、
 
     .. math::
-        \begin{align}
         z^K-1
         &= \prod_{k=0}^{K-1} (z-\zeta_K^k) \\
         &= (z-1) \prod_{k=1}^{K-1} (z-\zeta_K^k)
-        \end{align}
 
     となる。ここで、両辺の :math:`z=1` における微分係数を考えると、左辺について、
 
     .. math::
-        \begin{align}
         \eval{ \dv{z} (z^K-1) }_{z=1}
         &= \eval{ K z^{K-1} }_{z=1} \\
         &= K
-        \end{align}
 
     であり、右辺について、
 
     .. math::
-        \begin{align}
         \eval{ \dv{z} (z-1) \prod_{k=1}^{K-1} (z-\zeta_K^k) }_{z=1}
         &= \eval{ \qty[ \prod_{k=1}^{K-1} (z-\zeta_K^k) + (z-1) \dv{z} \prod_{k=1}^{K-1} (z-\zeta_K^k) ] }_{z=1} \\
         &= \prod_{k=1}^{K-1} (1-\zeta_K^k)
-        \end{align}
 
     となる。したがって、
 
@@ -96,12 +90,10 @@ Gessel の技巧的な証明を概ねなぞることにする。
     .. math::
         :label: gessel_temp_1
 
-        \begin{align}
         f(z)
         &\triangleq \sum_{n=1}^\infty \frac{S_{K,n}}{n} z^n \\
         &= \sum_{n=1}^\infty \frac{1}{n} \sum_{k=1}^{K-1} \frac{1}{(1-\zeta_K^k)^n} z^n \\
         &= \sum_{k=1}^{K-1} \sum_{n=1}^\infty \frac{1}{n} \qty( \frac{z}{1-\zeta_K^k} )^n
-        \end{align}
 
     とおく。ここで、
 
@@ -122,30 +114,25 @@ Gessel の技巧的な証明を概ねなぞることにする。
     .. math::
         :label: gessel_temp_2
 
-        \begin{align}
         f(z)
         &= -\sum_{k=1}^{K-1} \log \qty( 1 - \frac{z}{1-\zeta_K^k} ) \\
         &= -\sum_{k=1}^{K-1} \log \frac{(1-z)-\zeta_K^k}{1-\zeta_K^k}
-        \end{align}
 
     とできる。ここで、:math:`w \triangleq \log(1-z)` とおく。:math:`1-z = e^w` であることから、:eq:`gessel_temp_2` は、
 
     .. math::
         :label: gessel_temp_3
 
-        \begin{align}
         f(z)
         &= -\sum_{k=1}^{K-1} \log \frac{e^w-\zeta_K^k}{1-\zeta_K^k} \\
         &= \sum_{k=1}^{K-1} \log (1-\zeta_K^k) - \sum_{k=1}^{K-1} \log ( e^w-\zeta_K^k ) \\
         &= \log \prod_{k=1}^{K-1} (1-\zeta_K^k) - \log \prod_{k=1}^{K-1} ( e^w-\zeta_K^k )
-        \end{align}
 
     となり、:prf:ref:`1 の冪根に関する積の性質 <roots_of_unity_prop_prod>` より、:eq:`gessel_temp_3` は、
 
     .. math::
         :label: gessel_temp_4
 
-        \begin{align}
         f(z)
         &= \log K - \log \prod_{k=1}^{K-1} ( e^w-\zeta_K^k ) \\
         &= \log K - \log \frac{e^{Kw} - 1}{e^w - 1} \\
@@ -156,7 +143,6 @@ Gessel の技巧的な証明を概ねなぞることにする。
         &= \int_w^{Kw} \qty[ \dv{x} \log x - \dv{x} \log(e^x-1) ] \dd{x} \\
         &= \int_w^{Kw} \qty[ \frac{1}{x} - \frac{e^x}{e^x-1} ] \dd{x} \\
         &= \int_w^{Kw} \qty[ \frac{1}{x} \qty( 1 - \frac{x e^x}{e^x-1} ) ] \dd{x}
-        \end{align}
 
     となる。ここで、Bernoulli 数 :math:`B^-_r` の母関数が、
 
@@ -173,14 +159,12 @@ Gessel の技巧的な証明を概ねなぞることにする。
     .. math::
         :label: gessel_temp_5
 
-        \begin{align}
         f(z)
         &= \int_w^{Kw} \qty[ \frac{1}{x} \qty( 1 - \sum_{r=0}^\infty \frac{(-1)^r B^-_r}{r!} x^r ) ] \dd{x} \\
         &= \int_w^{Kw} \qty[ \frac{1}{x} \qty( 1 - \frac{B^-_0}{0!} - \sum_{r=1}^\infty \frac{(-1)^r B^-_r}{r!} x^r) ] \dd{x} \\
         &= - \sum_{r=1}^\infty \frac{(-1)^r B^-_r}{r!} \int_w^{Kw} x^{r-1} \dd{x} \\
         &= - \sum_{r=1}^\infty \frac{(-1)^r B^-_r}{r!} \frac{K^r-1}{r} w^r \\
         &= \sum_{r=1}^\infty \frac{B^-_r}{r} (1-K^r) (-1)^r \frac{[\log(1-z)]^r}{r!}
-        \end{align}
 
     となる。ここで、対数関数に関する Maclaurin 展開 :eq:`log_expansion` より、:eq:`gessel_temp_5` は、
 
@@ -193,11 +177,9 @@ Gessel の技巧的な証明を概ねなぞることにする。
     となる。二重総和部について、各 :math:`n \geq 1` について :math:`r` は :math:`1 \leq r \leq n` を動くことに注意して :eq:`gessel_temp_6` の総和記号を入れ替えると、
 
     .. math::
-        \begin{align}
         f(z)
         &= \sum_{n=1}^\infty \sum_{r=1}^n \stirI{n}{r} \frac{B^-_r}{r} (1-K^r) \frac{z^n}{n!} \\
         &= \sum_{n=1}^\infty \qty[ \frac{1}{(n-1)!} \sum_{r=1}^n \stirI{n}{r} \frac{B^-_r}{r} (1-K^r) ] \frac{z^n}{n}
-        \end{align}
 
     となり、示された。
 
@@ -219,7 +201,6 @@ Gessel の技巧的な証明を概ねなぞることにする。
     このとき、それらの線分の長さの :math:`2M` 乗の逆数和は、
 
     .. math::
-        \begin{align}
         \sum_{k=1}^{K-1} \frac{1}{\abs{1-\zeta_K^k}^{2M}}
         &= \sum_{k=1}^{K-1} \qty[ \frac{1}{(1-\zeta_K^k)(1-\zeta_K^{-k})} ]^M \\
         &= \sum_{k=1}^{K-1} \qty[ \frac{-\zeta_K^k}{(1-\zeta_K^k)^2} ]^M \\
@@ -228,7 +209,6 @@ Gessel の技巧的な証明を概ねなぞることにする。
         &= \sum_{k=1}^{K-1} \frac{1}{(1-\zeta_K^k)^M} \sum_{m=0}^M (-1)^m \binom{M}{m} \frac{1}{(1-\zeta_K^k)^m} \\
         &= \sum_{k=1}^{K-1} \sum_{m=0}^M (-1)^m \binom{M}{m} \frac{1}{(1-\zeta_K^k)^{M+m}} \\
         &= \sum_{m=0}^M (-1)^m \binom{M}{m} \sum_{k=1}^{K-1} \frac{1}{(1-\zeta_K^k)^{M+m}}
-        \end{align}
 
     と表せるから、:prf:ref:`gessel` より、
 

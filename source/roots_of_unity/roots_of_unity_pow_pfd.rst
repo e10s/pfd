@@ -17,7 +17,7 @@
     が成り立つ。ここで、:math:`\zeta_K \triangleq e^{i 2 \pi /K}` であり、
 
     .. math::
-        a_k^{\langle n \rangle} \triangleq \frac{(-1)^{N-n}}{(N-n)!} \frac{\zeta_K^{nk}}{K^N} B_{N-n} (0! N S_{K,1},1! N S_{K,2},\dots,(N-n-1)! N S_{K,N-n}) \\
+        a_k^{\langle n \rangle} \triangleq \frac{(-1)^{N-n}}{(N-n)!} \frac{\zeta_K^{nk}}{K^N} B_{N-n} (0! N S_{K,1},1! N S_{K,2},\dots,(N-n-1)! N S_{K,N-n})
 
     である。また、:math:`B_{N-n}` は :math:`N-n` 次 :prf:ref:`完全 Bell 多項式 <complete_bell_polynomial>` であり、
 
@@ -47,17 +47,17 @@
     .. math::
         :label: roots_of_unity_pow_pfd_temp_1
 
-        \begin{align}
         a_h^{\langle m \rangle}
         &= \frac{1}{(N-m)!} \eval{ \dv[N-m]{z} \qty[ (z-\zeta_K^h) \frac{1}{z^K-1} ]^N }_{z=\zeta_K^h} \\
         &= \frac{1}{(N-m)!} \eval{ \dv[N-m]{z} \qty[ \prod_{k=1}^{K-1} \frac{1}{z-\zeta_K^{k+h}} ]^N }_{z=\zeta_K^h}
-        \end{align}
 
     と表せることがわかる。
 
     ここで、
 
     .. math::
+        :no-wrap:
+
         \begin{empheq}[left=\empheqlbrace]{align}
         f(z) &\triangleq \prod_{k=1}^{K-1} \frac{1}{z-\zeta_K^{k+h}} \\
         g(z) &\triangleq N \log f(z)
@@ -66,11 +66,9 @@
     と定義すると、
 
     .. math::
-        \begin{align}
         e^{g(z)}
         &= e^{N \log f(z)} \\
         &= (f(z))^N
-        \end{align}
 
     であり、:prf:ref:`Faà di Bruno の公式の系 <faa_di_bruno_cor>` より、
 
@@ -91,11 +89,9 @@
     さらに、1 の冪根と部分分数分解の場合 :eq:`roots_of_unity_pfd_coef` と同様に、
 
     .. math::
-        \begin{align}
         f(\zeta_K^h)
         &= \eval{ \prod_{k=1}^{K-1} \frac{1}{z-\zeta_K^{k+h}} }_{z=\zeta_K^h} \\
         &= \frac{\zeta_K^h}{K}
-        \end{align}
 
     であるから、:eq:`roots_of_unity_pow_pfd_temp_2` は、
 
@@ -110,22 +106,18 @@
     また、:math:`\nu>0` について、:math:`\log f(z)` の :math:`\nu` 階導関数は、
 
     .. math::
-        \begin{align}
         \dv[\nu]{z} \log f(z)
         &= \dv[\nu]{z} \log \prod_{k=1}^{K-1} \frac{1}{z-\zeta_K^{k+h}} \\
         &= \dv[\nu]{z} \sum_{k=1}^{K-1} \log \frac{1}{z-\zeta_K^{k+h}} \\
         &= (-1)^\nu (\nu-1)! \sum_{k=1}^{K-1} \frac{1}{(z-\zeta_K^{k+h})^\nu}
-        \end{align}
 
     となるから、:math:`\log f(z)` の :math:`z=\zeta_K^h` における :math:`\nu` 階微分係数は、
 
     .. math::
-        \begin{align}
         \dv[\nu]{\log f}{z} (\zeta_K^h)
         &= (-1)^\nu (\nu-1)! \sum_{k=1}^{K-1} \frac{1}{(\zeta_K^h-\zeta_K^{k+h})^\nu} \\
         &= (-\zeta_K^{-h})^\nu (\nu-1)! \sum_{k=1}^{K-1} \frac{1}{(1-\zeta_K^k)^\nu} \\
         &= (-\zeta_K^{-h})^\nu (\nu-1)! S_{K,\nu}
-        \end{align}
 
     となり、
 
@@ -143,11 +135,9 @@
     となる。:prf:ref:`完全 Bell 多項式の引数が等比数列との積になっているときの性質 <complete_bell_polynomial_gp>` より、:eq:`roots_of_unity_pow_pfd_temp_4` は、
 
     .. math::
-        \begin{align}
         a_h^{\langle m \rangle}
         &= \frac{1}{(N-m)!} \frac{\zeta_K^{Nh}}{K^N} (-\zeta_K^{-h})^{N-m} B_{N-m} (0! N S_{K,1},1! N S_{K,2},\dots,(N-m-1)! N S_{K,N-m}) \\
         &= \frac{(-1)^{N-m}}{(N-m)!} \frac{\zeta_K^{mh}}{K^N} B_{N-m} (0! N S_{K,1},1! N S_{K,2},\dots,(N-m-1)! N S_{K,N-m}) \\
-        \end{align}
 
     となるがゆえ、示された。
 
@@ -176,15 +166,15 @@
     :prf:ref:`roots_of_unity_pow_pfd` において :math:`N \triangleq 2` としたとき、:math:`B_1(x_1) = x_1` であることを考慮すると、
 
     .. math::
-        \begin{align}
         B_1(2 S_{K,1})
         &= 2 S_{K,1} \\
         &= K-1
-        \end{align}
 
     であり、:math:`B_0 = 1` であったから、
 
     .. math::
+        :no-wrap:
+
         \begin{empheq}[left=\empheqlbrace]{align}
         a_k^{\langle 2 \rangle} &= \frac{\zeta_K^{2k}}{K^2} \\
         a_k^{\langle 1 \rangle} &= - \frac{(K-1) \zeta_K^{k}}{K^2}

@@ -30,7 +30,6 @@
     .. math::
         :label: hp_prod_pfd_coef
 
-        \begin{align}
         a_h
         &= \eval{ (z+h) P(z+w) \prod_{k=0}^K \frac{1}{z+k} }_{z=-h} \\
         &= \eval{ P(z+w) \qty[ \prod_{k=0}^{h-1} \frac{1}{z+k} ] \qty[ \prod_{k=h+1}^K \frac{1}{z+k} ] }_{z=-h} \\
@@ -38,7 +37,6 @@
         &= P(w-h) \qty[ (-1)^h \prod_{k=0}^{h-1} \frac{1}{h-k} ] \qty[ \prod_{k=1}^{K-h} \frac{1}{k} ] \\
         &= P(w-h) (-1)^h \frac{1}{h! (K-h)!} \\
         &= \frac{1}{K!} (-1)^h \binom{K}{h} P(w-h)
-        \end{align}
 
     であるがゆえ、示された。
 
@@ -88,14 +86,12 @@
     となる。ゆえに、:prf:ref:`hp_prod_pfd` より、
 
     .. math::
-        \begin{align}
         \frac{1}{(2x-1)(2x-3)(2x-5)}
         &= \frac{1}{8} \prod_{k=0}^2 \frac{1}{z+k} \\
         &= \frac{1}{8} \cdot \frac{1}{2!} \sum_{k=0}^2 (-1)^k \binom{2}{k} \frac{1}{z+k} \\
         &= \frac{1}{16} \qty[ \frac{1}{z+2} - \frac{2}{z+1} + \frac{1}{z} ] \\
         &= \frac{1}{16} \qty[ \frac{1}{x-\frac{5}{2}+2} - \frac{2}{x-\frac{5}{2}+1} + \frac{1}{x-\frac{5}{2}} ] \\
         &= \frac{1}{8} \qty[ \frac{1}{2x-1} - \frac{2}{2x-3} + \frac{1}{2x-5} ]
-        \end{align}
 
     となる。
 
@@ -115,14 +111,12 @@
     となる。さらに、:math:`P(z) \triangleq z^2` とおくと、:prf:ref:`melzak` より、
 
     .. math::
-        \begin{align}
         \frac{(x-2)^2}{(2x-1)(2x-3)(2x-5)}
         &= \frac{P \qty( z+\frac{1}{2} )}{8} \prod_{k=0}^2 \frac{1}{z+k} \\
         &= \frac{1}{8} \cdot \frac{1}{2!} \sum_{k=0}^2 (-1)^k \binom{2}{k} \frac{P \qty( \frac{1}{2}-k )}{z+k} \\
         &= \frac{1}{16} \qty[ \frac{\qty( -\frac{3}{2} )^2}{z+2} - \frac{2 \qty( -\frac{1}{2} )^2}{z+1} + \frac{\qty( \frac{1}{2} )^2}{z} ] \\
         &= \frac{1}{64} \qty[ \frac{9}{x-\frac{5}{2}+2} - \frac{2}{x-\frac{5}{2}+1} + \frac{1}{x-\frac{5}{2}} ] \\
         &= \frac{1}{32} \qty[ \frac{9}{2x-1} - \frac{2}{2x-3} + \frac{1}{2x-5} ]
-        \end{align}
 
     となる。
 
@@ -132,6 +126,8 @@
     一般に、公差が :math:`d \neq 0` のとき、:prf:ref:`melzak`、:prf:ref:`melzak_cor` および :prf:ref:`hp_prod_pfd` に対応するものとして、
 
     .. math::
+        :no-wrap:
+
         \begin{empheq}[left=\empheqlbrace]{align}
         P(z+w) \prod_{k=0}^K \frac{1}{z+kd} &= \frac{1}{K!d^K} \sum_{k=0}^K (-1)^k \binom{K}{k} \frac{P(w-kd)}{z+kd} \\
         P(z) \prod_{k=0}^K \frac{1}{z+kd} &= \frac{1}{K!d^K} \sum_{k=0}^K (-1)^k \binom{K}{k} \frac{P(-kd)}{z+kd} \\
@@ -164,14 +160,12 @@
     である。すると、:prf:ref:`melzak_cor` より、
 
     .. math::
-        \begin{align}
         \frac{1}{(z+1)(z+3)(z+4)}
         &= P(z) \prod_{k=0}^4 \frac{1}{z+k} \\
         &= \frac{1}{4!} \sum_{k=0}^4 (-1)^k \binom{4}{k} \frac{P(-k)}{z+k} \\
         &= \frac{1}{4!} \qty[ \frac{1 \cdot 0}{z} - \frac{4 \cdot (-1)}{z+1} + \frac{6 \cdot 0}{z+2} - \frac{4 \cdot 3}{z+3} + \frac{1 \cdot 8}{z+4} ] \\
         &= \frac{1}{24} \qty[ - \frac{-4}{z+1} - \frac{12}{z+3} + \frac{8}{z+4} ] \\
         &= \frac{1}{6} \qty[ \frac{1}{z+1} - \frac{3}{z+3} + \frac{2}{z+4} ] \\
-        \end{align}
 
     となる。
 

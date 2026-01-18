@@ -68,13 +68,11 @@
     :eq:`heaviside_proof_temp` の右辺について、
 
     .. math::
-        \begin{align}
-            &\phantom{{}={}} \dv[N_h-m]{z} (z-z_h)^{N_h} \sum_{k=0}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n} \\
-            &= \dv[N_h-m]{z} \qty[ (z-z_h)^{N_h} \sum_{k=0,k \neq h}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n} + \sum_{n=1}^{N_h} a_h^{\langle n \rangle} (z-z_h)^{N_h-n} ] \\
-            &= \dv[N_h-m]{z} \qty[ (z-z_h)^{N_h} \sum_{k=0,k \neq h}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n} + \sum_{n=1,n \neq m}^{N_h} a_h^{\langle n \rangle} (z-z_h)^{N_h-n} + a_h^{\langle m \rangle} (z-z_h)^{N_h-m} ] \\
-            &= a_h^{\langle m \rangle} \dv[N_h-m]{z} (z-z_h)^{N_h-m} + \dv[N_h-m]{z} \qty[ (z-z_h)^{N_h} \sum_{k=0,k \neq h}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n} + \sum_{n=1}^{m-1} a_h^{\langle n \rangle} (z-z_h)^{N_h-n} ] \\
-            &= a_h^{\langle m \rangle} (N_h-m)! + \dv[N_h-m]{z} \qty[ (z-z_h)^{N_h} \sum_{k=0,k \neq h}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n} + \sum_{n=1}^{m-1} a_h^{\langle n \rangle} (z-z_h)^{N_h-n} ]
-        \end{align}
+        &\phantom{{}={}} \dv[N_h-m]{z} (z-z_h)^{N_h} \sum_{k=0}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n} \\
+        &= \dv[N_h-m]{z} \qty[ (z-z_h)^{N_h} \sum_{k=0,k \neq h}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n} + \sum_{n=1}^{N_h} a_h^{\langle n \rangle} (z-z_h)^{N_h-n} ] \\
+        &= \dv[N_h-m]{z} \qty[ (z-z_h)^{N_h} \sum_{k=0,k \neq h}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n} + \sum_{n=1,n \neq m}^{N_h} a_h^{\langle n \rangle} (z-z_h)^{N_h-n} + a_h^{\langle m \rangle} (z-z_h)^{N_h-m} ] \\
+        &= a_h^{\langle m \rangle} \dv[N_h-m]{z} (z-z_h)^{N_h-m} + \dv[N_h-m]{z} \qty[ (z-z_h)^{N_h} \sum_{k=0,k \neq h}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n} + \sum_{n=1}^{m-1} a_h^{\langle n \rangle} (z-z_h)^{N_h-n} ] \\
+        &= a_h^{\langle m \rangle} (N_h-m)! + \dv[N_h-m]{z} \qty[ (z-z_h)^{N_h} \sum_{k=0,k \neq h}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n} + \sum_{n=1}^{m-1} a_h^{\langle n \rangle} (z-z_h)^{N_h-n} ]
 
     であるが、この被微分関数は :math:`(z-z_h)^{N_h-m+1}` を因数に持ち、:prf:ref:`一般の Leibniz 則 <leibniz_rule_general>` より :math:`N_h-m` 階微分によって分子に :math:`z-z_h` が因数として残るから、
 
@@ -110,6 +108,8 @@
     と部分分数分解でき、係数 :math:`A,B,C` は、
 
     .. math::
+        :no-wrap:
+
         \begin{empheq}[left=\empheqlbrace]{alignat=2}
         A &= &\eval{ \frac{x^2-3}{(x+3)^2} }_{x=1} &= -\frac{1}{8} \\
         B &= &\eval{ \frac{x^2-3}{x-1} }_{x=-3} &= -\frac{3}{2}\\

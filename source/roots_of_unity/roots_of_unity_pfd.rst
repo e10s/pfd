@@ -28,7 +28,6 @@
     :prf:ref:`Heaviside の方法 <heaviside_method>` より、:math:`k=h` のときの :math:`1/(z-\zeta_K^h)` の係数 :math:`a_h` は、
 
     .. math::
-        \begin{align}
         a_h
         &= \eval{ (z-\zeta_K^h) P(z) \frac{1}{z^K-1} }_{z=\zeta_K^h} \\
         &= \eval{ (z-\zeta_K^h) P(z) \prod_{k=0}^{K-1} \frac{1}{z-\zeta_K^k} }_{z=\zeta_K^h} \\
@@ -37,7 +36,6 @@
         &= P(\zeta_K^h) \prod_{k=1}^{K-1} \frac{1}{\zeta_K^h-\zeta_K^{k+h}} \\
         &= P(\zeta_K^h) (\zeta_K^{-h})^{K-1} \prod_{k=1}^{K-1} \frac{1}{1-\zeta_K^k} \\
         &= P(\zeta_K^h) \zeta_K^h \prod_{k=1}^{K-1} \frac{1}{1-\zeta_K^k}
-        \end{align}
 
     となり、:prf:ref:`1 の冪根に関する積の性質 <roots_of_unity_prop_prod>` より、
 

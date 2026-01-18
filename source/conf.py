@@ -33,8 +33,8 @@ html_baseurl = "https://e10s.github.io/pfd/"
 html_extra_path = ["googlefb2b68adba636a34.html"]
 html_last_updated_fmt = ""
 
-mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
-mathjax3_config = {
+mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"
+mathjax4_config = {
     "loader": {"load": ["ui/lazy", "[tex]/physics", "[tex]/empheq"]},
     "tex": {
         "packages": {
