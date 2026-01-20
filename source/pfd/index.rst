@@ -23,6 +23,43 @@
 
     となる複素数 :math:`a_k^{\langle n \rangle}` が存在する\ :footcite:ps:`stevecheng2013,Hairer2016`。
 
+.. prf:proof::
+    多項式 :math:`q_0(z)` を、
+
+    .. math::
+        q_0(z) \triangleq \prod_{k=1}^K (z-z_k)^{N_k}
+
+    と定義すると :math:`Q(z) = (z-z_0)^{N_0} q_0(z)` と表せる。このとき、
+
+    .. math::
+        a_0^{\langle N_0 \rangle} \triangleq \frac{P(z_0)}{q_0(z_0)}
+
+    と定めれば、これを変形して :math:`P(z_0) - a_0^{\langle N_0 \rangle} q_0(z_0) = 0` となることから、因数定理より、
+
+    .. math::
+        p_0^{\langle N_0 \rangle}(z) \triangleq \frac{P(z) - a_0^{\langle N_0 \rangle} q_0(z) }{z-z_0}
+
+    を多項式として定義できる。さらに、:math:`\deg p_0^{\langle N_0 \rangle} < \deg Q - 1` を満たす。すると、
+
+    .. math::
+        \frac{P(z)}{(z-z_0)^{N_0} q_0(z)} = \frac{p_0^{\langle N_0 \rangle}(z)}{(z-z_0)^{N_0-1} q_0(z)} + \frac{a_0^{\langle N_0 \rangle}}{(z-z_0)^{N_0}}
+
+    と部分分数分解できることが右辺を通分することで確かめられる。
+
+    また、同様にして、
+
+    .. math::
+        \frac{p_0^{\langle N_0 \rangle}(z)}{(z-z_0)^{N_0-1} q_0(z)} = \frac{p_0^{\langle N_0-1 \rangle}(z)}{(z-z_0)^{N_0-2} q_0(z)} + \frac{a_0^{\langle N_0-1\rangle}}{(z-z_0)^{N_0-1}}
+
+    となる複素数 :math:`a_0^{\langle N_0-1 \rangle}` と多項式 :math:`p_0^{\langle N_0-1 \rangle}(z)` が得られるから、この操作を繰り返すことで :math:`z-z_0` の負冪の項をすべて取り出して、
+
+    .. math::
+        \frac{P(z)}{Q(z)} = \frac{p_0^{\langle 1 \rangle}(z)}{q_0(z)} + \sum_{n=1}^{N_0} \frac{ a_0^{\langle n \rangle} }{(z-z_0)^n}
+
+    と部分分数分解できる。
+
+    さらに :math:`q_0(z)` の各因子について :math:`p_0^{\langle 1 \rangle}(z) / q_0(z)` に同様の操作を繰り返すことで、最終的に :eq:`pfd` が得られる。
+
 .. tip::
     一般に、:math:`\deg P \geq \deg Q` の場合も、多項式の除算により、
 
