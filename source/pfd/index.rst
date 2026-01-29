@@ -82,6 +82,8 @@
     :eq:`pfd` における :math:`a_k^{\langle n \rangle}` は、
 
     .. math::
+        :label: heaviside_coeff
+
         a_k^{\langle n \rangle} = \frac{1}{(N_k-n)!} \eval{ \dv[N_k-n]{z} (z-z_k)^{N_k} \frac{P(z)}{Q(z)} }_{z=z_k}
 
     と表される\ :footcite:ps:`Hairer2016`。
@@ -127,6 +129,16 @@
         a_h^{\langle m \rangle} = \frac{1}{(N_h-m)!} \eval{ \dv[N_h-m]{z} (z-z_h)^{N_h} \frac{P(z)}{Q(z)} }_{z=z_h}
 
     となり、示された。
+
+.. prf:theorem:: Laurent 級数の主要部の和による表現
+    :label: laurent_principal_part
+
+    :prf:ref:`pfd_theorem` の状況において :math:`P(z)/Q(z)` のすべての極について、その極のまわりの Laurent 級数を考える。このとき、:eq:`pfd` はそれらの主要部の総和として表せる\ :footcite:ps:`Jimbo2024,Horiguchi2000`。
+
+.. prf:proof::
+    :math:`z=z_k` は :math:`Q(z)` の根であるとする。:math:`P(z)/Q(z)` の :math:`z=z_k` のまわりの Laurent 級数における :math:`1/(z-z_k)^n` の係数は :eq:`heaviside_coeff` で表せるから、:prf:ref:`heaviside_method` より、:eq:`pfd` の右辺の内側の総和はそのような Laurent 級数の主要部にほかならない。
+
+    :math:`z=z_k` は :math:`P(z)/Q(z)` の高々 :math:`N_k` 位の極である。しかしながらこれが除去可能特異点であるならば主要部は :math:`0` であることに注意すると、:eq:`pfd` の右辺の外側の総和はすべての極をわたれば十分であり、示された。
 
 例
 ~~
