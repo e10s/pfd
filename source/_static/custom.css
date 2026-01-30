@@ -7,25 +7,25 @@
 
 div.theorem > .admonition-title:after {
   content: var(--admonition-thm-icon);
-  color: var(--note-border-color);
+  color: var(--theorem-border-color);
 }
 
 div.corollary > .admonition-title:after {
   content: var(--admonition-thm-icon);
-  color: var(--caution-border-color);
+  color: var(--corollary-border-color);
 }
 
 div.definition > .admonition-title:after {
   content: var(--admonition-def-icon);
-  color: var(--note-border-color);
+  color: var(--definition-border-color);
 }
 
 div.property > .admonition-title:after {
   content: var(--admonition-prop-icon);
-  color: var(--caution-border-color);
+  color: var(--property-border-color);
 }
 
 div.example > .admonition-title:after {
   content: var(--admonition-ex-icon);
-  color: var(--hint-border-color);
+  color: var(--example-border-color);
 }
