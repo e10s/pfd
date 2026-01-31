@@ -144,7 +144,82 @@
 ~~
 
 .. prf:example::
-    :label: pfd_example
+    :label: pfd_example_division
+
+    有理関数
+
+    .. math::
+        \frac{x^2-3}{(x-1)(x+3)^2}
+
+    の部分分数分解を :prf:ref:`pfd_theorem` の証明で用いた方法、すなわち多項式の除算を繰り返すことで行う。
+
+    :math:`P(x) \triangleq x^2-3, Q(x) \triangleq (x-1)(x+3)^2, x_0 \triangleq 1, x_1 \triangleq -3` とおく。
+
+    多項式 :math:`q_0(x) \triangleq (x-x_1)^2` のもと :math:`Q(x) = (x-x_0) q_0(x)` と表せて、
+
+    .. math::
+        :no-wrap:
+
+        \begin{empheq}[left=\empheqlbrace]{align}
+        a_0^{\langle 1 \rangle}
+        &\triangleq \frac{P(x_0)}{q_0(x_0)} \\
+        &= -\frac{1}{8} \\
+        p_0^{\langle 1 \rangle}(x)
+        &\triangleq \frac{P(x) - a_0^{\langle 1 \rangle} q_0(x)}{x-x_0} \\
+        &= \frac{(x^2-3) + \frac{1}{8} (x+3)^2}{x-1} \\
+        &= \frac{3}{8} (3x+5)
+        \end{empheq}
+
+    とおくと、
+
+    .. math::
+        \frac{P(x)}{(x-x_0) q_0(x)}
+        &=\frac{p_0^{\langle 1 \rangle}(x)}{q_0(x)} + \frac{a_0^{\langle 1 \rangle}}{(x-x_0)} \\
+        &= \frac{\frac{3}{8} (3x+5)}{(x+3)^2} - \frac{1}{8(x-1)}
+
+    となる。
+
+    次に、多項式 :math:`q_1(x) \triangleq 1` のもと :math:`q_0(x) = (x-x_1)^2 q_1(x)` と表せて、
+
+    .. math::
+        :no-wrap:
+
+        \begin{empheq}[left=\empheqlbrace]{align}
+        a_1^{\langle 2 \rangle}
+        &\triangleq \frac{p_0^{\langle 1 \rangle}(x_1)}{q_1(x_1)} \\
+        &= -\frac{3}{2} \\
+        p_1^{\langle 2 \rangle}(x)
+        &\triangleq \frac{p_0^{\langle 1 \rangle}(x) - a_1^{\langle 2 \rangle} q_1(x)}{x-x_1} \\
+        &= \frac{\frac{3}{8} (3x+5) + \frac{3}{2}}{x+3} \\
+        &= \frac{9}{8}
+        \end{empheq}
+
+    とおくと、
+
+    .. math::
+        \frac{p_0^{\langle 1 \rangle}(x)}{(x-x_1)^2 q_1(x)}
+        &=\frac{p_1^{\langle 2 \rangle}(x)}{(x-x_1) q_1(x)} + \frac{a_1^{\langle 2 \rangle}}{(x-x_1)^2} \\
+        &= \frac{9}{8(x+3)} - \frac{3}{2 (x+3)^2}
+
+    となる。
+
+    以上から、
+
+    .. math::
+        \frac{x^2-3}{(x-1)(x+3)^2}
+        &= \frac{P(x)}{Q(x)} \\
+        &= \frac{P(x)}{(x-x_0) q_0(x)} \\
+        &= \frac{p_0^{\langle 1 \rangle}(x)}{q_0(x)} + \frac{a_0^{\langle 1 \rangle}}{(x-x_0)} \\
+        &= \frac{p_0^{\langle 1 \rangle}(x)}{(x-x_1)^2 q_1(x)} + \frac{a_0^{\langle 1 \rangle}}{(x-x_0)} \\
+        &= \qty[ \frac{9}{8(x+3)} - \frac{3}{2 (x+3)^2} ] - \frac{1}{8(x-1)} \\
+        &= -\frac{1}{8(x-1)} - \frac{3}{2 (x+3)^2} + \frac{9}{8(x+3)}
+
+    と部分分数分解できる。
+
+.. prf:example::
+    :label: pfd_example_heaviside
+
+    :prf:ref:`pfd_example_division` と同じ有理関数
 
     .. math::
         \frac{x^2-3}{(x-1)(x+3)^2}
