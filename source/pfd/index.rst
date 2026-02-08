@@ -60,18 +60,40 @@
 
     さらに :math:`q_0(z)` の各因子について :math:`p_0^{\langle 1 \rangle}(z) / q_0(z)` に同様の操作を繰り返すことで、最終的に :eq:`pfd` が得られる。
 
-.. tip::
-    一般に、:math:`\deg P \geq \deg Q` の場合も、多項式の除算により、
+.. prf:theorem:: 一般の有理関数の部分分数分解
+    :label: pfd_theorem_general
+
+    有理関数 :math:`R(z)` が複素数係数の多項式 :math:`P(z),Q(z)` により :math:`P(z)/Q(z)` と表され、:math:`Q(z)` は相異なる :math:`z_0,\dots,z_K` のもと、
 
     .. math::
-        P(z) = q(z) Q(z) + r(z), \quad \deg r < \deg Q
+        Q(z) \triangleq \prod_{k=0}^K (z-z_k)^{N_k}
 
-    を満たす多項式 :math:`q(z),r(z)` が一意に存在することから、
+    と因数分解できるものとする。ただし、次数 :math:`N_k` は正の整数である。
+
+    また、:math:`P(z)` を :math:`Q(z)` で割った商を :math:`S(z)` とすると、
 
     .. math::
-        \frac{P(z)}{Q(z)} = q(z) + \frac{r(z)}{Q(z)}
+        :label: pfd_general
 
-    と表すことにより、:prf:ref:`pfd_theorem` で扱うことのできる :math:`r(z)/Q(z)` の部分分数分解に還元できる。
+        R(z) = S(z) + \sum_{k=0}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n}
+
+    となる複素数 :math:`a_k^{\langle n \rangle}` が存在する\ :footcite:ps:`stevecheng2013,Hairer2016`。
+
+.. prf:proof::
+
+    :math:`P(z)` を :math:`Q(z)` で割った余りを :math:`\hat{P}(z)` とすると、
+
+    .. math::
+        :label: polynomial_division
+
+        R(z) = S(z) + \frac{\hat{P}(z)}{Q(z)}
+
+    と表せる。ここで :math:`\deg \hat{P} < \deg Q` であるから、:prf:ref:`pfd_theorem` より、
+
+    .. math::
+        \frac{\hat{P}(z)}{Q(z)} = \sum_{k=0}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n}
+
+    と部分分数分解できる。これを :eq:`polynomial_division` に代入することで :eq:`pfd_general` が得られる。
 
 公式
 ~~~~
