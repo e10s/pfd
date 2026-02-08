@@ -101,12 +101,12 @@
 .. prf:theorem:: Heaviside の方法
     :label: heaviside_method
 
-    :eq:`pfd` における :math:`a_k^{\langle n \rangle}` は、
+    :eq:`pfd_general` における :math:`a_k^{\langle n \rangle}` は、
 
     .. math::
         :label: heaviside_coeff
 
-        a_k^{\langle n \rangle} = \frac{1}{(N_k-n)!} \eval{ \dv[N_k-n]{z} (z-z_k)^{N_k} \frac{P(z)}{Q(z)} }_{z=z_k}
+        a_k^{\langle n \rangle} = \frac{1}{(N_k-n)!} \eval{ \dv[N_k-n]{z} (z-z_k)^{N_k} R(z) }_{z=z_k}
 
     と表される\ :footcite:ps:`Hairer2016`。
 
@@ -116,17 +116,31 @@
 .. prf:proof::
     :math:`k=h,n=m` であるときの :math:`1/(z-z_h)^m` の係数 :math:`a_h^{\langle m \rangle}` を求める。
 
-    :eq:`pfd` の両辺に :math:`(z-z_h)^{N_h}` を掛け、さらに :math:`z=z_h` における :math:`N_h-m` 階微分係数を求めても等式は成り立つ。すなわち、
+    :eq:`pfd_general` の両辺に :math:`(z-z_h)^{N_h}` を掛け、さらに :math:`z=z_h` における :math:`N_h-m` 階微分係数を求めても等式は成り立つ。すなわち、
 
     .. math::
         :label: heaviside_proof_temp
 
-        \eval{ \dv[N_h-m]{z} (z-z_h)^{N_h} \frac{P(z)}{Q(z)} }_{z=z_h} =
-        \eval{ \dv[N_h-m]{z} (z-z_h)^{N_h} \sum_{k=0}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n} }_{z=z_h}
+        \eval{ \dv[N_h-m]{z} (z-z_h)^{N_h} R(z) }_{z=z_h} =
+        \eval{ \dv[N_h-m]{z} (z-z_h)^{N_h} \qty[ S(z) + \sum_{k=0}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n} ] }_{z=z_h}
 
     となる。
 
-    :eq:`heaviside_proof_temp` の右辺について、
+    :eq:`heaviside_proof_temp` の右辺について考える。
+
+    まず、
+
+    .. math::
+        \dv[N_h-m]{z} (z-z_h)^{N_h} S(z)
+
+    は :math:`S(z)` が多項式であることから被微分関数は :math:`(z-z_h)^{N_h}` を因数に持ち、:prf:ref:`一般の Leibniz 則 <leibniz_rule_general>` より :math:`N_h-m` 階微分によって :math:`z-z_h` が因数として残るから、
+
+    .. math::
+        :label: heaviside_proof_rhs1
+
+        \eval{ \dv[N_h-m]{z} (z-z_h)^{N_h} S(z) }_{z=z_h} = 0
+
+    である。また、
 
     .. math::
         &\phantom{{}={}} \dv[N_h-m]{z} (z-z_h)^{N_h} \sum_{k=0}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n} \\
@@ -138,29 +152,38 @@
     であるが、この被微分関数は :math:`(z-z_h)^{N_h-m+1}` を因数に持ち、:prf:ref:`一般の Leibniz 則 <leibniz_rule_general>` より :math:`N_h-m` 階微分によって分子に :math:`z-z_h` が因数として残るから、
 
     .. math::
+        :label: heaviside_proof_rhs2
+
         \eval{ \dv[N_h-m]{z} (z-z_h)^{N_h} \sum_{k=0}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n} }_{z=z_h} = a_h^{\langle m \rangle} (N_h-m)!
 
-    となる。ゆえに :eq:`heaviside_proof_temp` より、
+    となる。ゆえに :eq:`heaviside_proof_rhs1` および :eq:`heaviside_proof_rhs2` を :eq:`heaviside_proof_temp` を代入すれば、
 
     .. math::
-        \eval{ \dv[N_h-m]{z} (z-z_h)^{N_h} \frac{P(z)}{Q(z)} }_{z=z_h} = a_h^{\langle m \rangle} (N_h-m)!
+        \eval{ \dv[N_h-m]{z} (z-z_h)^{N_h} R(z) }_{z=z_h} = a_h^{\langle m \rangle} (N_h-m)!
 
     であるから、
 
     .. math::
-        a_h^{\langle m \rangle} = \frac{1}{(N_h-m)!} \eval{ \dv[N_h-m]{z} (z-z_h)^{N_h} \frac{P(z)}{Q(z)} }_{z=z_h}
+        a_h^{\langle m \rangle} = \frac{1}{(N_h-m)!} \eval{ \dv[N_h-m]{z} (z-z_h)^{N_h} R(z) }_{z=z_h}
 
     となり、示された。
 
 .. prf:theorem:: Laurent 級数の主要部の和による表現
     :label: laurent_principal_part
 
-    :prf:ref:`pfd_theorem` の状況において :math:`P(z)/Q(z)` のすべての極について、その極のまわりの Laurent 級数を考える。このとき、:eq:`pfd` はそれらの主要部の総和として表せる\ :footcite:ps:`Jimbo2024,Horiguchi2000`。
+    :prf:ref:`pfd_theorem_general` の状況において有理関数 :math:`R(z)` のすべての極について、その極のまわりの Laurent 級数を考える。このとき、:math:`R(z) - S(z)` はそれらの主要部の総和として表せる\ :footcite:ps:`Jimbo2024,Horiguchi2000`。
 
 .. prf:proof::
-    :math:`z=z_k` は :math:`Q(z)` の根であるとする。:math:`P(z)/Q(z)` の :math:`z=z_k` のまわりの Laurent 級数における :math:`1/(z-z_k)^n` の係数は :eq:`heaviside_coeff` で表せるから、:prf:ref:`heaviside_method` より、:eq:`pfd` の右辺の内側の総和はそのような Laurent 級数の主要部にほかならない。
+    :prf:ref:`pfd_theorem_general` より、
 
-    :math:`z=z_k` は :math:`P(z)/Q(z)` の高々 :math:`N_k` 位の極である。しかしながらこれが除去可能特異点であるならば主要部は :math:`0` であることに注意すると、:eq:`pfd` の右辺の外側の総和はすべての極をわたれば十分であり、示された。
+    .. math::
+        :label: laurent_principal_part_proof
+
+        R(z) - S(z) = \sum_{k=0}^K \sum_{n=1}^{N_k} \frac{ a_k^{\langle n \rangle} }{(z-z_k)^n}
+
+    と書ける。ここで :math:`z=z_k` は :math:`Q(z)` の根であるとする。:math:`R(z)` の :math:`z=z_k` のまわりの Laurent 級数における :math:`1/(z-z_k)^n` の係数は :eq:`heaviside_coeff` で表せるから、:prf:ref:`heaviside_method` より、:eq:`laurent_principal_part_proof` の右辺の内側の総和はそのような Laurent 級数の主要部にほかならない。
+
+    :math:`z=z_k` は :math:`R(z)` の高々 :math:`N_k` 位の極である。しかしながらこれが除去可能特異点であるならば主要部は :math:`0` であることに注意すると、:eq:`laurent_principal_part_proof` の右辺の外側の総和は :math:`z_k` が極であるようなすべての :math:`k` たちをわたれば十分であり、示された。
 
 例
 ~~
