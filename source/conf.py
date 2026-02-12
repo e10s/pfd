@@ -53,5 +53,8 @@ bibtex_bibfiles = ["article_refs.bib", "book_refs.bib", "web_refs.bib"]
 bibtex_footbibliography_header = ".. rubric:: 参考文献"
 
 sitemap_url_scheme = "{link}"
+sitemap_show_lastmod = True
 
 ogp_site_url = html_baseurl
+
+git_last_updated_timezone = "Asia/Tokyo"
