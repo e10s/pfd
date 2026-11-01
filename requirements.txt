@@ -1,4 +1,4 @@
-Sphinx==9.1.0
+Sphinx==9.2.0
 sphinx-book-theme==1.4.0
 sphinxcontrib-bibtex==2.7.0
 sphinx-proof==0.4.0
